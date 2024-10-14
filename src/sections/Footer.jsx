@@ -113,7 +113,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Email"
-              className="p-5 rounded-2xl bg-transparent border border-white lg:h-auto"
+              className="text-white p-5 rounded-2xl bg-transparent border border-white lg:h-auto"
             />
             <input
               type="submit"

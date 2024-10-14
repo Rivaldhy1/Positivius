@@ -1,6 +1,29 @@
+import { useState } from "react";
 import { contactIlus } from "../assets";
+import Sayhi from "./contact/Sayhi";
+import ComingSoon from "./contact/ComingSoon";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 const Contact = () => {
+  const [radio, setRadio] = useState("");
+  const sayHiRef = useRef(null);
+  const getQoute = useRef(null);
+
+  const handleRadio = () => {
+    if (sayHiRef.current.checked) {
+      setRadio(sayHiRef.current.value);
+    }
+    if (getQoute.current.checked) {
+      setRadio(getQoute.current.value);
+    }
+  };
+
+  useEffect(() => {
+    sayHiRef.current.checked = true;
+    setRadio(sayHiRef.current.value);
+  }, []);
+
   return (
     <section className="container mt-20 lg:mt-36">
       <div className="text-center flex flex-col gap-[30px] lg:flex-row lg:inline-flex lg:text-left lg:gap-10">
@@ -24,6 +47,8 @@ const Contact = () => {
                   id="sayhi"
                   value="sayHi"
                   className="w-5 h-5"
+                  ref={sayHiRef}
+                  onChange={handleRadio}
                 />
                 Say Hi
               </label>
@@ -35,51 +60,19 @@ const Contact = () => {
                   type="radio"
                   name="choice"
                   id="getqoute"
-                  value="getqoute"
+                  value="getQoute"
                   className="w-5 h-5"
+                  ref={getQoute}
+                  onChange={handleRadio}
                 />
                 Get a Qoute
               </label>
             </div>
           </div>
 
-          <form className="font-main flex flex-col gap-5 px-7 mt-9 lg:px-0">
-            <label htmlFor="name">
-              Name
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Name"
-                className="input mt-2"
-              />
-            </label>
-            <label htmlFor="email">
-              Email
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Email"
-                className="input mt-2"
-              />
-            </label>
-            <label htmlFor="message">
-              Message
-              <textarea
-                name="message"
-                id="message"
-                placeholder="Message"
-                rows={6}
-                className="mt-2 block w-full rounded-xl border border-black p-4"
-              ></textarea>
-            </label>
-            <input
-              type="submit"
-              value="Send Message"
-              className="w-full text-white py-4 mt-8 bg-darkCostum rounded-xl"
-            />
-          </form>
+          {/* Content */}
+          {radio === "sayHi" && <Sayhi />}
+          {radio === "getQoute" && <ComingSoon />}
         </div>
         <div className="hidden lg:block lg:w-1/2 lg:absolute lg:right-0">
           <img src={contactIlus} alt="" className="w-full" />

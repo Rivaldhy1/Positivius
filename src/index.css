@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  .inputRadio {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    background-color: #dadada;
+    border: 10px solid #ffffff;
+    box-shadow: 0 0 0 1px #000;
+  }
+}
+
+@layer components {
+  .container {
+    @apply w-full h-full px-5 lg:px-[100px] mx-auto;
+  }
+  .box-rounded {
+    @apply rounded-[45px];
+  }
+  .boxCase {
+    @apply w-full mx-auto bg-[#191a23] rounded-[45px];
+  }
+  .nav-link {
+    @apply py-1 px-8 font-semibold text-lg lg:px-3 lg:text-base lg:font-normal;
+  }
+  .input {
+    @apply block w-full p-4 rounded-xl border border-black;
+  }
+
+  .h1-desktop {
+    @apply text-[60px] font-medium font-main;
+  }
+  .h2-desktop {
+    @apply text-[40px] font-medium font-main;
+  }
+  .h3-desktop {
+    @apply text-3xl font-medium font-main;
+  }
+  .h4-desktop {
+    @apply text-xl font-medium font-main;
+  }
+  .paragraph-desktop {
+    @apply text-lg font-normal font-main;
+  }
+
+  .h1-mobile {
+    @apply text-[43px] font-medium font-main;
+  }
+  .h2-mobile {
+    @apply text-4xl font-medium font-main;
+  }
+  .h3-mobile {
+    @apply text-[26px] font-medium font-main;
+  }
+  .h4-mobile {
+    @apply text-lg font-medium font-main;
+  }
+  .paragraph-mobile {
+    @apply text-base font-normal font-main;
+  }
+}
+
+.hamburger-icon {
+  @apply w-[30px] h-[2px] my-2 block bg-black;
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}

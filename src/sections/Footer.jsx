@@ -108,7 +108,7 @@ const Footer = () => {
 
           <form
             action=""
-            className="w-11/12 p-[30px] my-[37px] mx-auto bg-[#292A32] rounded-2xl flex flex-col gap-5 lg:my-0 lg:w-1/2 lg:flex-row lg:justify-center lg:mx-0"
+            className="w-11/12 p-[30px] my-[37px] mx-auto bg-[#292A32] rounded-2xl flex flex-col gap-5 lg:my-0 lg:w-auto lg:flex-row lg:justify-center lg:mx-0"
           >
             <input
               type="email"

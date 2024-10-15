@@ -17,7 +17,7 @@ const Companies = () => {
 
     // Add / Remove(lebih ke hidden / block div nya) items copyan
     copyItemsRef.current.forEach((copy) => {
-      if (widthWindow > 1024) {
+      if (widthWindow >= 1024) {
         copy.classList.add("hidden");
       } else {
         copy.classList.remove("hidden");

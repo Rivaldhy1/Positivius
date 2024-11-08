@@ -74,9 +74,11 @@ const Contact = () => {
           {radio === "sayHi" && <Sayhi />}
           {radio === "getQoute" && <ComingSoon />}
         </div>
-        <div className="hidden lg:block lg:w-1/2 lg:absolute lg:right-0">
-          <img src={contactIlus} alt="" className="w-full" />
-        </div>
+        {radio === "sayHi" && (
+          <div className="hidden lg:block lg:w-1/2 lg:absolute lg:right-0">
+            <img src={contactIlus} alt="" className="w-full" />
+          </div>
+        )}
       </div>
     </section>
   );
